@@ -3,9 +3,8 @@ import { resolve } from 'path'
 import { cwd } from 'process'
 import { createServer, startDispatcher } from '..'
 
-const relative = (name: string) => resolve(cwd(), name)
-
-let config = require(relative('surfboard.server.js'))
+let configPath = resolve(cwd(), 'surfboard.server')
+let config = require(configPath)
 
 createServer().listen(1337, () => console.log('Server started.'))
 startDispatcher(config.sources)
