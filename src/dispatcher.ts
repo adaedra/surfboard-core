@@ -1,4 +1,4 @@
-import { Observable, ReplaySubject, combineLatest } from 'rxjs'
+import { Observable, BehaviorSubject, combineLatest } from 'rxjs'
 import { map as mapOperator, startWith } from 'rxjs/operators'
 import { map } from 'lodash'
 
@@ -6,7 +6,7 @@ type Config = {
     [key: string]: Observable<any>
 }
 
-const dispatcher = new ReplaySubject()
+const dispatcher = new BehaviorSubject({})
 
 export function start(config: Config) {
     const observables = map(config, (observable, key) =>
