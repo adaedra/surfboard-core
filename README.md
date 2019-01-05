@@ -1,5 +1,9 @@
 # 🌊 Surfboard
 
+![Package version](https://img.shields.io/npm/v/@surfboard/core.svg?style=flat&logo=npm)
+![License](https://img.shields.io/github/license/adaedra/surfboard-core.svg)
+![Build status](https://img.shields.io/circleci/project/github/adaedra/surfboard-core/master.svg?style=flat&logo=circleci)
+
 Surfboard is a modular dashboard project, based on modern web development tools (JavaScript, React,
 Rx).
 The aim is to create a tool that adapts to the need of its users and not the other way around, by
