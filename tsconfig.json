@@ -3,6 +3,7 @@
         "types": ["node", "jest"],
         "lib": ["es2015"],
         "outDir": "dist",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "strict": true
     }
 }
