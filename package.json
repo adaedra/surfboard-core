@@ -1,6 +1,6 @@
 {
     "name": "@surfboard/core",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Server component of the surfboard dashboard, providing data sources",
     "repository": {
         "type": "git",
