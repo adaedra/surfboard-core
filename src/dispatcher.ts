@@ -1,5 +1,5 @@
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs'
-import { map as mapOperator, startWith } from 'rxjs/operators'
+import { Observable, combineLatest, BehaviorSubject } from 'rxjs'
+import { map as mapOperator, startWith, tap } from 'rxjs/operators'
 import { map } from 'lodash'
 
 type Config = {
@@ -10,11 +10,13 @@ const dispatcher = new BehaviorSubject({})
 
 export function start(config: Config) {
     const observables = map(config, (observable, key) =>
-        observable.pipe(mapOperator(value => ({ [key]: value }), startWith({})))
+        observable
+            .pipe(mapOperator(value => ({ [key]: value })))
+            .pipe(startWith({}))
     )
-    combineLatest(...observables, Object.assign).subscribe(dispatcher)
+    combineLatest(...observables, Object.assign).subscribe(v =>
+        dispatcher.next(v)
+    )
 }
-
-dispatcher.subscribe(value => console.log('dispatcher', value))
 
 export default dispatcher
