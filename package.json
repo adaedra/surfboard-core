@@ -9,6 +9,7 @@
     "homepage": "https://github.com/adaedra/surfboard-core",
     "license": "MIT",
     "scripts": {
+        "prepare": "npm run build",
         "build": "tsc -p tsconfig.build.json",
         "watch": "tsc -p tsconfig.build.json --watch",
         "test": "jest"
